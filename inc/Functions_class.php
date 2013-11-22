@@ -21,18 +21,6 @@ class Functions {
 		return $string;
 	}
 
-	/** 
-	* Function that checks if a URL exists
-	* @param  string $link URL link
-	* @return bool         whether or not the page exists
-	**/
-	public function checkIfLinkExists($link) {
-		$link_headers = @get_headers($link);
-    	$http_status = array();
-    	preg_match('/HTTP\/.* ([0-9]+) .*/', $link_headers[0] , $http_status);
-    	return ($http_status[1] == 200);
-	}
-
 	/**
 	* Function that returns everything before a delimeter in a URL
 	* @param  string $link 		URL Link
