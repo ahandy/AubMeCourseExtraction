@@ -1,7 +1,4 @@
 <?php
-/**
-* Database class that contains all the functions that might be needed by the code to facilitate some queries
-**/
 abstract class DatabaseBlueprint extends Config {
 	public $dbh;
 
@@ -9,6 +6,9 @@ abstract class DatabaseBlueprint extends Config {
 	abstract public function insert($rows, $table);
 }
 
+/**
+* Database class that contains all the functions that might be needed by the code to facilitate some queries
+**/
 class Database extends DatabaseBlueprint {
 
 	public function __construct() {
@@ -17,6 +17,7 @@ class Database extends DatabaseBlueprint {
 
 	/**
 	* Function that connects to the database
+	* Make sure the proper constants are set inside the Config_class file to connect to the database
 	**/
 	protected function connectToDB() {
 		try {
@@ -39,8 +40,7 @@ class Database extends DatabaseBlueprint {
 			throw new Exception("Parameter given to the insert function of the database class is not an array");
 
 		$array_keys = array_keys($rows);
-
-		// Removing any misc characters
+		
 		$insert_columns = implode(",", $array_keys);
 		$insert_vals = ':' . implode(',:', $array_keys);
 		$sql_query_string = "INSERT INTO {$table} ({$insert_columns}) VALUES ({$insert_vals})";
