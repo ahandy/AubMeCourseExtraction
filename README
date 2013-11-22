@@ -1,0 +1,31 @@
+This is a small PHP script that will iterate through AUB's Dynamic Course Schedule and then go through each page and output the courses into a table. You can also (and this is on by default) allow it to insert the courses into your database. For this, you have to run the following SQL code and make sure that the table name and database constants are correct in the config file:
+
+	CREATE TABLE IF NOT EXISTS `courses` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `CRN` varchar(11) NOT NULL,
+	  `Subject` varchar(100) NOT NULL,
+	  `Code` varchar(100) NOT NULL,
+	  `ClassStartTime` varchar(100) NOT NULL,
+	  `ClassEndTime` varchar(100) NOT NULL,
+	  `Monday` varchar(100) NOT NULL,
+	  `Tuesday` varchar(100) NOT NULL,
+	  `Wednesday` varchar(100) NOT NULL,
+	  `Thursday` varchar(100) NOT NULL,
+	  `Friday` varchar(100) NOT NULL,
+	  `Saturday` varchar(100) NOT NULL,
+	  `RecLabStartTime` varchar(100) NOT NULL,
+	  `RecLabEndTime` varchar(100) NOT NULL,
+	  `MondayRC` varchar(100) NOT NULL,
+	  `TuesdayRC` varchar(100) NOT NULL,
+	  `WednesdayRC` varchar(100) NOT NULL,
+	  `ThursdayRC` varchar(100) NOT NULL,
+	  `FridayRC` varchar(100) NOT NULL,
+	  `SaturdayRC` varchar(100) NOT NULL,
+	  `InstructorsFirstName` varchar(100) NOT NULL,
+	  `InstructorsLastName` varchar(100) NOT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+I used the Simple HTML DOM parser library because it's pretty useful and makes the code easier to implement.
+
+I also included a small array in the config file that contains all the majors available at AUB. This was hand-entered so I hope you enjoy it.
