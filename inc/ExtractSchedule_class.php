@@ -108,7 +108,7 @@ class ExtractSchedule extends ExtractScheduleBlueprint {
 			/**
 			* @var array $properInformation 	array containing the properly formatted columns
 			**/
-			$properInformation = array('CRN', 'Subject', 'Code', 'ClassStartTime', 'ClassEndTime', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'RecLabStartTime', 'RecLabEndTime', 'MondayRC', 'TuesdayRC', 'WednesdayRC', 'ThursdayRC', 'FridayRC', 'SaturdayRC', "InstructorsFirstName", "InstructorsLastName");
+			$properInformation = array('CRN', 'Subject', 'Code', 'ClassStartTime', 'ClassEndTime', 'RecLabStartTime', 'RecLabEndTime', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'MondayRC', 'TuesdayRC', 'WednesdayRC', 'ThursdayRC', 'FridayRC', 'SaturdayRC', "InstructorsFirstName", "InstructorsLastName");
 
 			/**
 			* @var array $properHeadings 	array containing the indeces and their properly formatted column headers
